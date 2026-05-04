@@ -1,11 +1,12 @@
 export { mergeSort };
 
 const mergeSort = (array) => {
-  // base case
+  // base case: zero or single element is already sorted
   if (array.length === 0 || array.length === 1) {
     return array;
   }
 
+  // find the middle and split the array
   const middleIndex = Math.ceil(array.length / 2);
   const left = array.slice(0, middleIndex);
   const right = array.slice(middleIndex);
@@ -14,9 +15,11 @@ const mergeSort = (array) => {
   let leftSide = mergeSort(left);
   let rightSide = mergeSort(right);
 
+  // return sorted and merge the halves
   return sort(leftSide, rightSide);
 };
 
+// helper function for merge sorting left and right sides
 function sort(left, right) {
   let result = [];
   let i = 0;
