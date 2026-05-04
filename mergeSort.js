@@ -34,6 +34,8 @@ function sort(left, right) {
       j++;
     }
   }
+
+  // concatenate the remaining elements
   return result.concat(left.slice(i)).concat(right.slice(j));
 }
 
